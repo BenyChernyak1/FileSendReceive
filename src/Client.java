@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.concurrent.CountDownLatch;
 
 
 public class Client {
@@ -11,11 +12,13 @@ public class Client {
             File folder = new File(processDirectory);
             File[] listOfFiles = folder.listFiles();
 
+            CountDownLatch latch = new CountDownLatch(1);
             if (null != listOfFiles && 1 == listOfFiles.length) {
                 Runnable runnable = new Transfer(listOfFiles[0]);
                 Thread thread = new Thread(runnable);
                 thread.start();
             }
+            latch.await();
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
