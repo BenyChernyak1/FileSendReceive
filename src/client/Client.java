@@ -1,3 +1,5 @@
+package client;
+
 import java.io.*;
 import java.util.concurrent.CountDownLatch;
 
@@ -25,6 +27,6 @@ public class Client {
 
         long end = System.currentTimeMillis();
         long transferTime = (end - start) / 1000;
-        System.out.println("Transfer time is:" + transferTime + " sec");
+        System.out.println("client.Transfer time is:" + transferTime + " sec");
     }
 }

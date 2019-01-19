@@ -1,3 +1,7 @@
+package client;
+
+import utils.Utils;
+
 import java.net.*;
 import java.io.*;
 import java.util.concurrent.CountDownLatch;
