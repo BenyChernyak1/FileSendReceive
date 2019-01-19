@@ -27,6 +27,6 @@ public class Client {
 
         long end = System.currentTimeMillis();
         long transferTime = (end - start) / 1000;
-        System.out.println("client.Transfer time is:" + transferTime + " sec");
+        System.out.println("Transfer time is:" + transferTime + " sec");
     }
 }
