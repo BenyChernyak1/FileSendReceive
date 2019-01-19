@@ -14,7 +14,7 @@ public class Client {
 
             CountDownLatch latch = new CountDownLatch(1);
             if (null != listOfFiles && 1 == listOfFiles.length) {
-                Runnable runnable = new Transfer(listOfFiles[0]);
+                Runnable runnable = new Transfer(listOfFiles[0], latch);
                 Thread thread = new Thread(runnable);
                 thread.start();
             }

@@ -1,15 +1,18 @@
 import java.net.*;
 import java.io.*;
+import java.util.concurrent.CountDownLatch;
 
 
 public class Transfer implements Runnable{
     private File file;
+    CountDownLatch latch;
 
     /**
      * @param file Name of file to transfer
      */
-    Transfer(File file){
+    Transfer(File file, CountDownLatch latch){
         this.file = file;
+        this.latch = latch;
     }
 
     @Override
@@ -25,6 +28,8 @@ public class Transfer implements Runnable{
 
                 Utils.readBytesFromStream(bytes, in, out);
                 socket.close();
+
+                this.latch.countDown();
             }
             catch(IOException ex){
                 System.out.println("Exception: " + ex.getMessage());
