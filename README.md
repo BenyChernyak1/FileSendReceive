@@ -6,3 +6,6 @@
 # Start scenario
 * Run **Server.java** from *server* package
 * Run **Client.java** from *client* package
+
+# Misc
+Use **Utils.java** from *utils* package for output filename and socket port number changes
