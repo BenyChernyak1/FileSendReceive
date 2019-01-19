@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class Transfer implements Runnable{
     private File file;
-    CountDownLatch latch;
+    private CountDownLatch latch;
 
     /**
      * @param file Name of file to transfer
@@ -34,7 +34,6 @@ public class Transfer implements Runnable{
             catch(IOException ex){
                 System.out.println("Exception: " + ex.getMessage());
             }
-
         }
     }
 }
