@@ -25,7 +25,7 @@ public class Downloader implements Runnable{
             OutputStream out;
             try {
                 in = this.socket.getInputStream();
-                String storeLocation = System.getProperty("user.dir") + "/store/";
+                String storeLocation = System.getProperty("user.dir") + System.getProperty("file.separator") + "store" + System.getProperty("file.separator");
                 out = new FileOutputStream(storeLocation + fileName);
                 byte[] bytes = new byte[16*1024];
 

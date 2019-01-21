@@ -10,7 +10,7 @@ public class Client {
         long start = System.currentTimeMillis();
 
         try {
-            String processDirectory = System.getProperty("user.dir") + "/files/";
+            String processDirectory = System.getProperty("user.dir") + System.getProperty("file.separator") + "files" + System.getProperty("file.separator");
             File folder = new File(processDirectory);
             File[] listOfFiles = folder.listFiles();
 
